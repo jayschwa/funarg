@@ -1,3 +1,4 @@
+# convert a string to a function name and its arguments. Underscores are escaped by using an underscore
 function parse_name(s)
     in_under = false
     symbols = String[""]
@@ -24,39 +25,9 @@ end
 macro funmac(e)
     name = string(e)
     syms = parse_name(name)
-    syms = map(symbol, syms)
-    args = gensym()
-    i = gensym()
-    print(syms)
+    args = [parse(x) for x in syms[2:end]]
+    sym = symbol(syms[1])
     quote
-        $args = {}
-        for i in 2:length($syms)
-            push!($args,$(syms[$i]))
-        end
-        $(syms[1])($args...)
+        $(sym)($(args...))
     end
 end
-
-# julia> @funmac(foo_11)
-# ERROR: error compiling @funmac: syntax: prefix $ in non-quoted expression
-
-# julia> @funmac(foo_x)
-# ERROR: error compiling @funmac: syntax: prefix $ in non-quoted expression
-
-
-macro funmac(e)
-    name = string(e)
-    syms = parse_name(name)
-    syms = map(symbol, syms)
-    print(syms)
-    quote
-        print($(syms[2]))
-        $(syms[1])($(syms[2:end])...)
-    end
-end
-
-# julia> @funmac(foo_x)
-# [:foo,:11]ERROR: 11 not defined
-
-# julia> @funmac(foo_x)
-# [:foo,:x]5:x
