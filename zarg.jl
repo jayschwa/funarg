@@ -22,7 +22,7 @@ function parse_name(s)
     symbols
 end
 
-macro funmac(e)
+macro zarg(e)
     name = string(e)
     syms = parse_name(name)
     args = [parse(x) for x in syms[2:end]]
