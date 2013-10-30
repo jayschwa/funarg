@@ -1,4 +1,6 @@
-# Funarg: I heard you like function arguments so we put function arguments in your function ...
+# Funarg: move function arguments into the function name.
+
+e.g., instead of `foo(a,b)`, we have `foo_a_b`.
 
 ## Usage
 
