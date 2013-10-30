@@ -1,4 +1,4 @@
-## Funarg: move function arguments into the function name.
+## Funarg: move function arguments into the function name
 
 e.g., instead of `foo(a,b)`, we have `foo_a_b`.
 
@@ -31,7 +31,7 @@ julia> @funarg foo_a_15
 #### Why?
 Why not?
 
-### TODOs:
+### TODOs
 Support named arguments.
 
 Make a macro that lets you declare variables and functions that conflict with reserved words.
