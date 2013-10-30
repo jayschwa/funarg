@@ -26,8 +26,8 @@ macro funarg(e)
     name = string(e)
     syms = parse_name(name)
     args = [parse(x) for x in syms[2:end]]
-    sym = symbol(syms[1])
+    f = symbol(syms[1])
     quote
-        $(sym)($(args...))
+        $(f)($(args...))
     end
 end
