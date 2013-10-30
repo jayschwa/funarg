@@ -32,5 +32,7 @@ julia> @funarg foo_a_15
 Why not?
 
 ### TODOs:
-Support named arguments
-Make a macro that lets you declare variables and functions that conflict with reserved words
+Support named arguments.
+
+Make a macro that lets you declare variables and functions that conflict with reserved words.
+
