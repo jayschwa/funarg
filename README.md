@@ -2,6 +2,8 @@
 
 e.g., instead of `foo(a,b)`, we have `foo_a_b`.
 
+This was a quick pair programming project with [Leah Hanson](https://github.com/astrieanna/).
+
 #### Usage
 
 ~~~
